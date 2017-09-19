@@ -7,7 +7,18 @@ defmodule Jokenpo do
 
   def loop(state) do
     state = receive do
-      # Only change code inside the receive block
+      state = receive do
+        {from, :p1, choice} ->
+          send(from, :ok)
+          Map.put(state, :p1, choice)
+        {from, :p2, choice} ->
+          send(from, :ok)
+          Map.put(state, :p2, choice)
+        {from, :play} ->
+          send(from, play(state))
+          state
+      end
+      loop(state)
     end
     loop(state)
   end
