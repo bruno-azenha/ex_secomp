@@ -3,12 +3,15 @@ defmodule Ex1Test do
 
   test "is that the right type v2?" do
     # make the variables be of the right type
-    pid =
-    port =
-    reference =
+    function = fn(a, b) -> a + b end
+    pid = Process.spawn(fn -> IO.inspect("ok") end, [])
+    port = Port.open({:spawn, "hello"}, [:binary])
+    reference = make_ref()
 
     # Don't change the lines below
+    assert is_function(function)
     assert is_pid(pid)
     assert is_port(port)
-    assert is_reference(ref)
+    assert is_reference(reference)
+  end
 end

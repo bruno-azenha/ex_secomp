@@ -3,15 +3,15 @@ defmodule Ex1Test do
 
   test "is that the right type?" do
     # make the variables be of the right type
-    atom =
-    integer =
-    float =
-    number =
-    string =
-    tuple =
-    list =
-    map =
-    boolean =
+    atom = :atom
+    integer = 123
+    float = 1.23
+    number = 123
+    string = "This is a string"
+    tuple = {"Hello", 123, [], :atom}
+    list = ["List", 123, [], :atom]
+    map = %{:k1 => "value1", "k2" => "value2", "k3" => 123}
+    boolean = true
 
     # Don't change the lines below
     assert is_atom(atom)
@@ -23,4 +23,6 @@ defmodule Ex1Test do
     assert is_list(list)
     assert is_map(map)
     assert is_boolean(boolean)
+  end
+  
 end
