@@ -23,4 +23,5 @@ defmodule Ex1Test do
     assert is_list(list)
     assert is_map(map)
     assert is_boolean(boolean)
+  end
 end
